@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "X9YCv+q4sGM=",
+  "success": true,
+  "projectFilePath": "/Users/nkolamilanovic/RiderProjects/RareCrewCSharp/RareCrewCSharp/RareCrewCSharp.csproj",
+  "expectedPackageFiles": [
+    "/Users/nkolamilanovic/.nuget/packages/skiasharp/3.119.1/skiasharp.3.119.1.nupkg.sha512",
+    "/Users/nkolamilanovic/.nuget/packages/skiasharp.nativeassets.linux.nodependencies/3.119.1/skiasharp.nativeassets.linux.nodependencies.3.119.1.nupkg.sha512",
+    "/Users/nkolamilanovic/.nuget/packages/skiasharp.nativeassets.macos/3.119.1/skiasharp.nativeassets.macos.3.119.1.nupkg.sha512",
+    "/Users/nkolamilanovic/.nuget/packages/skiasharp.nativeassets.win32/3.119.1/skiasharp.nativeassets.win32.3.119.1.nupkg.sha512"
+  ],
+  "logs": []
+}
