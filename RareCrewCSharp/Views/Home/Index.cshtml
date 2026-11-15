@@ -1,46 +1,27 @@
-@model RareCrewCSharp.ViewModels.EmployeeTableViewModel
-@using RareCrewCSharp.ViewModels
+@model EmployeesViewModel
 @{
     ViewData["Title"] = "Employees";
 }
 
-<h1 class="mb-4">Employees by total time worked</h1>
+<h1 class="mb-4">Employees</h1>
 
-@if (Model.ErrorMessage is not null)
-{
-    <div class="alert alert-warning" role="alert">@Model.ErrorMessage</div>
-}
-else if (Model.Employees.Count == 0)
-{
-    <div class="alert alert-info" role="alert">No time entries found.</div>
-}
-else
-{
-    <p class="text-muted">
-        Rows highlighted in red: employees who worked less than @EmployeeTableViewModel.LowHoursThreshold hours.
-    </p>
-
-    <table class="table table-bordered">
-        <thead class="table-light">
-            <tr>
-                <th>Name</th>
-                <th class="text-end">Total Time Worked (hours)</th>
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>Name</th>
+            <th class="text-end">Total Time Worked (hours)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model.Employees)
+        {
+            <tr class="@(employee.TotalHours < EmployeesViewModel.LowHoursLimit ? "table-danger" : null)">
+                <td>@employee.Name</td>
+                <td class="text-end">@employee.TotalHours.ToString("0.##")</td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var employee in Model.Employees)
-            {
-                <tr class="@(EmployeeTableViewModel.IsBelowThreshold(employee) ? "table-danger" : null)">
-                    <td>@employee.Name</td>
-                    <td class="text-end">@employee.TotalHours.ToString("0.##")</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
 
-    <h2 class="mt-5 mb-3">Percentage of total time worked</h2>
-    <img src="@Url.Action("Chart", "Home")" alt="Pie chart of percentage of total time worked per employee" class="img-fluid border" />
-    <p class="mt-2">
-        <a asp-controller="Home" asp-action="Chart" asp-route-download="true" class="btn btn-outline-primary btn-sm">Download PNG</a>
-    </p>
-}
+<h2 class="mt-5 mb-3">Percentage of total time worked</h2>
+<img src="data:image/png;base64,@Model.PieChart" alt="Pie chart" class="img-fluid border" />

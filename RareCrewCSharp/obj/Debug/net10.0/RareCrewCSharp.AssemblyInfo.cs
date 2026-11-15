@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RareCrewCSharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ded909767b507b262e3bcf5954dbfb2e1799763f")]
 [assembly: System.Reflection.AssemblyProductAttribute("RareCrewCSharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RareCrewCSharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
